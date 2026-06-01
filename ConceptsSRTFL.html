@@ -17,6 +17,8 @@
     --blue: #4fa3ff;
     --purple: #c084fc;
     --orange: #fb923c;
+    --cyan: #22d3ee;
+    --lime: #a3e635;
     --text: #e8eaed;
     --muted: #6b7280;
     --card-h: 340px;
@@ -165,6 +167,8 @@
   .tile[data-topic="trendlines"]{ --accent: var(--blue);   --glow: rgba(79,163,255,0.12); }
   .tile[data-topic="fvg"]       { --accent: var(--purple); --glow: rgba(192,132,252,0.12); }
   .tile[data-topic="liquidity"] { --accent: var(--orange); --glow: rgba(251,146,60,0.12); }
+  .tile[data-topic="volume"]    { --accent: var(--cyan);   --glow: rgba(34,211,238,0.12); }
+  .tile[data-topic="orderblock"]{ --accent: var(--lime);   --glow: rgba(163,230,53,0.12); }
 
   .tile-icon {
     font-size: 36px;
@@ -531,8 +535,6 @@
     .tiles { grid-template-columns: 1fr; }
     .tiles-row2 { grid-template-columns: 1fr; max-width: 100%; }
     .two-col { grid-template-columns: 1fr; }
-    .tiles .tile:nth-child(4),
-    .tiles .tile:nth-child(5) { grid-column: auto; }
   }
 </style>
 </head>
@@ -614,6 +616,60 @@
           <span class="tile-num">05</span>
           <div class="tile-title">Liquidity</div>
           <p class="tile-desc">BSL, SSL & Liquidity Sweeps — where stop orders cluster and smart money hunts.</p>
+        </div>
+        <span class="tile-cta">Explore →</span>
+      </div>
+    </div>
+
+    <!-- Row 3: 2 tiles centered -->
+    <div class="tiles-row2">
+      <div class="tile" data-topic="volume" onclick="openTopic('volume')">
+        <svg class="tile-chart" width="140" height="100" viewBox="0 0 140 100">
+          <rect x="80" y="10" width="55" height="10" fill="#22d3ee" opacity="0.5" rx="1"/>
+          <rect x="80" y="22" width="40" height="10" fill="#22d3ee" opacity="0.35" rx="1"/>
+          <rect x="80" y="34" width="60" height="10" fill="#22d3ee" opacity="0.45" rx="1"/>
+          <rect x="80" y="46" width="70" height="10" fill="#22d3ee" opacity="0.9" rx="1"/>
+          <rect x="80" y="58" width="55" height="10" fill="#22d3ee" opacity="0.45" rx="1"/>
+          <rect x="80" y="70" width="35" height="10" fill="#22d3ee" opacity="0.3" rx="1"/>
+          <rect x="80" y="82" width="45" height="10" fill="#22d3ee" opacity="0.4" rx="1"/>
+          <line x1="0" y1="51" x2="80" y2="51" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3,2"/>
+          <polyline points="0,80 15,70 30,55 45,52 60,48 75,51" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
+        </svg>
+        <div>
+          <span class="tile-num">06</span>
+          <div class="tile-title">Volume Profile</div>
+          <p class="tile-desc">POC, Value Area & Volume Nodes — where the market's true interest lies.</p>
+        </div>
+        <span class="tile-cta">Explore →</span>
+      </div>
+
+      <div class="tile" data-topic="orderblock" onclick="openTopic('orderblock')">
+        <svg class="tile-chart" width="140" height="100" viewBox="0 0 140 100">
+          <rect x="0" y="48" width="140" height="22" fill="#a3e635" opacity="0.12" rx="2"/>
+          <line x1="0" y1="48" x2="140" y2="48" stroke="#a3e635" stroke-width="1.2" stroke-dasharray="4,3"/>
+          <line x1="0" y1="70" x2="140" y2="70" stroke="#a3e635" stroke-width="1.2" stroke-dasharray="4,3"/>
+          <rect x="8"  y="62" width="10" height="22" fill="#374151" rx="1"/>
+          <line x1="13" y1="56" x2="13" y2="88" stroke="#6b7280" stroke-width="1"/>
+          <rect x="24" y="58" width="10" height="20" fill="#374151" rx="1"/>
+          <line x1="29" y1="52" x2="29" y2="82" stroke="#6b7280" stroke-width="1"/>
+          <rect x="40" y="52" width="12" height="20" fill="#a3e635" opacity="0.7" rx="1"/>
+          <line x1="46" y1="46" x2="46" y2="76" stroke="#a3e635" stroke-width="1.5"/>
+          <rect x="58" y="28" width="10" height="26" fill="#22c55e" opacity="0.8" rx="1"/>
+          <line x1="63" y1="22" x2="63" y2="58" stroke="#22c55e" stroke-width="1.5"/>
+          <rect x="74" y="18" width="10" height="22" fill="#22c55e" opacity="0.7" rx="1"/>
+          <line x1="79" y1="12" x2="79" y2="44" stroke="#22c55e" stroke-width="1.5"/>
+          <rect x="90" y="52" width="10" height="18" fill="#374151" rx="1"/>
+          <line x1="95" y1="46" x2="95" y2="74" stroke="#6b7280" stroke-width="1"/>
+          <rect x="106" y="38" width="10" height="20" fill="#22c55e" opacity="0.7" rx="1"/>
+          <line x1="111" y1="32" x2="111" y2="62" stroke="#22c55e" stroke-width="1.5"/>
+          <rect x="122" y="22" width="10" height="20" fill="#22c55e" opacity="0.7" rx="1"/>
+          <line x1="127" y1="16" x2="127" y2="46" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="5" y="44" fill="#a3e635" font-size="7" letter-spacing="1">ORDER BLOCK</text>
+        </svg>
+        <div>
+          <span class="tile-num">07</span>
+          <div class="tile-title">Order Blocks</div>
+          <p class="tile-desc">The last candle before an impulse move — where institutions left their footprint in the market.</p>
         </div>
         <span class="tile-cta">Explore →</span>
       </div>
@@ -873,60 +929,491 @@ const topics = {
     accent: '#fb923c',
     tag: 'Smart Money / ICT Concept',
     title: 'Liquidity',
-    subtitle: 'Liquidity is the fuel of institutional trading. BSL (Buy-Side Liquidity), SSL (Sell-Side Liquidity), and Liquidity Sweeps reveal where smart money hunts retail stop losses before making their true move.',
+    subtitle: 'Liquidity is the fuel of institutional trading. Buy-Side Liquidity (BSL), Sell-Side Liquidity (SSL), and Liquidity Sweeps reveal precisely where smart money engineers price to hunt retail stop losses before launching the true directional move.',
     chart: drawLiquidityChart,
     sections: [
       {
-        label: 'Understanding Liquidity',
-        content: `<p>In financial markets, <strong style="color:#e8eaed">liquidity</strong> refers to pools of resting orders — specifically stop losses. Retail traders predictably place stops above swing highs (buy stops = BSL) and below swing lows (sell stops = SSL). Institutions need these orders to fill their own large positions.</p>
-        <p>A <strong style="color:#e8eaed">liquidity sweep</strong> occurs when price momentarily moves into a liquidity pool — triggering those stops — then sharply reverses. This is not random: it's deliberate price manipulation by participants with enough capital to move markets.</p>
+        label: '1. What Is Liquidity in Trading?',
+        content: `<p>In financial markets, <strong style="color:#e8eaed">liquidity</strong> refers to the ease with which an asset can be bought or sold without significantly affecting its price. A liquid market has high trading volume and tight bid-ask spreads, while an illiquid market can exhibit wide spreads and erratic price moves when large orders are placed.</p>
+        <p>From an institutional or <strong style="color:#e8eaed">Smart Money perspective</strong>, liquidity has a deeper and more strategic meaning: it represents pools of resting orders — primarily stop-loss orders and pending orders — placed by retail traders at predictable levels. These pools act as fuel for large participants to enter and exit positions efficiently.</p>
+        <div class="key-box" style="background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.25);border-left:3px solid #fb923c;border-radius:0 8px 8px 0;padding:16px 20px;margin:16px 0;">
+          <span style="font-size:10px;letter-spacing:3px;color:#fb923c;text-transform:uppercase;font-weight:600;">KEY INSIGHT</span>
+          <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;line-height:1.7;">Liquidity = clusters of orders waiting to be triggered. Smart money seeks these zones to fill large positions at minimal slippage.</p>
+        </div>
+        <h3 style="margin-top:20px;">Why Liquidity Matters to Large Participants</h3>
+        <p>Institutional players — banks, hedge funds, proprietary trading firms — cannot simply place a 10,000-lot order in a thin market. Doing so would move price dramatically against them before the order is filled. Instead, they need a counterparty on the other side of their trade.</p>
+        <ul>
+          <li><strong style="color:#e8eaed">Going long?</strong> They need sellers — found below support where retail stop-losses accumulate.</li>
+          <li><strong style="color:#e8eaed">Going short?</strong> They need buyers — found above resistance where retail stop-losses (on short positions) accumulate.</li>
+          <li><strong style="color:#e8eaed">Engineering the move:</strong> By pushing price into these zones, institutions fill their orders while retail traders are stopped out.</li>
+        </ul>
+        <h3 style="margin-top:20px;">Types of Liquidity Zones</h3>
+        <p>Liquidity is not distributed randomly. It concentrates at specific, observable areas on a chart:</p>
         <div class="two-col">
           <div class="info-card">
-            <h4>Buy-Side Liquidity (BSL)</h4>
-            <p>Rests <em>above</em> swing highs, equal highs, and previous day/week highs. Retail short-sellers place their stops here. Institutions buy INTO this liquidity to fill large long positions.</p>
+            <h4>Equal Highs / Lows (EQH/EQL)</h4>
+            <p>Perceived resistance/support with large stop clusters. Retail sees these as "strong" levels — making them prime hunting grounds.</p>
           </div>
           <div class="info-card">
-            <h4>Sell-Side Liquidity (SSL)</h4>
-            <p>Rests <em>below</em> swing lows, equal lows, and previous day/week lows. Retail longs place their stops here. Institutions sell INTO this liquidity to fill large short positions.</p>
+            <h4>Previous Session Highs/Lows</h4>
+            <p>PDH/PDL, PWH/PWL, PMH/PML are significant reference points widely watched by retail — reset every session cycle.</p>
           </div>
+          <div class="info-card">
+            <h4>Round Numbers</h4>
+            <p>Psychological levels like 1.3000 (Forex) or $100 (stocks) attract a disproportionate number of stop orders from retail participants.</p>
+          </div>
+          <div class="info-card">
+            <h4>Trendline Touches & FVGs</h4>
+            <p>Stop orders placed just beyond popular trendlines, and imbalance zones (FVGs/Order Blocks) where price may return to collect orders.</p>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">EQH / EQL</span>
+          <span class="tag">PDH / PDL</span>
+          <span class="tag">Round Numbers</span>
+          <span class="tag">FVG</span>
+          <span class="tag">Order Blocks</span>
         </div>`
       },
       {
-        label: 'Identifying Liquidity Pools',
-        content: `<ul>
-          <li><strong style="color:#e8eaed">Equal Highs / Equal Lows:</strong> Two or more swing points at the same price level are honeypots — retail traders see these as strong support/resistance, placing stops just beyond them.</li>
-          <li><strong style="color:#e8eaed">Previous Day High/Low (PDH/PDL):</strong> Major liquidity pools reset every session. These levels are systematically targeted during the NY or London sessions.</li>
-          <li><strong style="color:#e8eaed">Round numbers:</strong> Psychological levels attract a disproportionate number of stop orders — $50,000 BTC, 1.2000 EUR/USD.</li>
-          <li><strong style="color:#e8eaed">Trendline stop clusters:</strong> Trend-following retail traders place stops just below uptrend lines — making these areas prime sweep targets.</li>
-          <li><strong style="color:#e8eaed">Session highs & lows:</strong> Asian range highs and lows are frequently swept during the London or New York open.</li>
+        label: '2. Buy Side Liquidity (BSL)',
+        content: `<p><strong style="color:#e8eaed">Buy Side Liquidity</strong> refers to the pool of buy orders resting above swing highs, resistance levels, and equal highs. These buy orders are primarily the stop-loss orders placed by traders who are short the market.</p>
+        <div class="key-box" style="background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.25);border-left:3px solid #fb923c;border-radius:0 8px 8px 0;padding:14px 20px;margin:16px 0;">
+          <span style="font-size:10px;letter-spacing:3px;color:#fb923c;text-transform:uppercase;font-weight:600;">BSL LOCATION</span>
+          <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;">Buy Side Liquidity forms <strong>ABOVE</strong>: swing highs, equal highs, previous session highs, resistance zones, and round number levels.</p>
+        </div>
+        <h3>Formation of Buy Side Liquidity</h3>
+        <p>When a trader shorts an asset, their broker requires them to set a stop-loss order <em>above</em> the entry to cap their risk. These stop-loss orders are actually <strong style="color:#e8eaed">buy orders</strong> — they will trigger a buy if price moves up past a certain level. When thousands of retail traders short a market at the same resistance level, a dense cluster of buy orders forms just above that level. This is Buy Side Liquidity.</p>
+        <h3 style="margin-top:18px;">Who Takes Buy Side Liquidity?</h3>
+        <p>Smart money takes BSL when they need to offload (sell) a large long position or initiate a short position. By pushing price up into the BSL zone:</p>
+        <ul>
+          <li>Retail short-sellers are <strong style="color:#e8eaed">stopped out</strong> — their stop-loss buy orders execute.</li>
+          <li><strong style="color:#e8eaed">FOMO buyers</strong> enter, believing in a breakout — adding more buying volume.</li>
+          <li>Institutions <strong style="color:#e8eaed">sell into this demand</strong>, distributing their long positions or building shorts.</li>
         </ul>
+        <h3 style="margin-top:18px;">Identifying BSL on a Chart</h3>
+        <ul>
+          <li>Mark <strong style="color:#e8eaed">swing highs</strong> — especially those tested multiple times (equal highs).</li>
+          <li>Look for areas where the market has <strong style="color:#e8eaed">repeatedly failed to sustain</strong> above a level.</li>
+          <li>Confluences with <strong style="color:#e8eaed">round numbers or previous session highs</strong> strengthen the zone.</li>
+          <li><strong style="color:#e8eaed">Higher timeframe BSL</strong> is more significant than lower timeframe levels.</li>
+        </ul>`
+      },
+      {
+        label: '3. Sell Side Liquidity (SSL)',
+        content: `<p><strong style="color:#e8eaed">Sell Side Liquidity</strong> refers to the pool of sell orders resting below swing lows, support levels, and equal lows. These sell orders are primarily stop-loss orders placed by traders who are long the market.</p>
+        <div class="key-box" style="background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.25);border-left:3px solid #fb923c;border-radius:0 8px 8px 0;padding:14px 20px;margin:16px 0;">
+          <span style="font-size:10px;letter-spacing:3px;color:#fb923c;text-transform:uppercase;font-weight:600;">SSL LOCATION</span>
+          <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;">Sell Side Liquidity forms <strong>BELOW</strong>: swing lows, equal lows, previous session lows, support zones, and round number levels.</p>
+        </div>
+        <h3>Formation of Sell Side Liquidity</h3>
+        <p>When a trader goes long on an asset, their stop-loss is placed <em>below</em> the entry — typically just below a key support level. These stops are <strong style="color:#e8eaed">sell orders</strong> that will trigger if price drops past a certain level. When many retail traders buy at the same support, a dense pool of sell orders forms below that support. This is Sell Side Liquidity.</p>
+        <h3 style="margin-top:18px;">Who Takes Sell Side Liquidity?</h3>
+        <p>Smart money takes SSL when they need to offload (buy back) a large short position or initiate a long position. By pushing price down into the SSL zone:</p>
+        <ul>
+          <li>Retail long traders are <strong style="color:#e8eaed">stopped out</strong> — their stop-loss sell orders execute.</li>
+          <li><strong style="color:#e8eaed">Breakout sellers</strong> enter short, believing in a downside breakout — adding selling pressure.</li>
+          <li>Institutions <strong style="color:#e8eaed">buy into this supply</strong>, accumulating long positions or covering shorts.</li>
+        </ul>
+        <h3 style="margin-top:18px;">Identifying SSL on a Chart</h3>
+        <ul>
+          <li>Mark <strong style="color:#e8eaed">swing lows</strong> — especially equal lows where price has bounced multiple times.</li>
+          <li>Note areas where the market has <strong style="color:#e8eaed">repeatedly found support</strong>.</li>
+          <li><strong style="color:#e8eaed">Previous session lows and round numbers</strong> enhance the significance of the SSL zone.</li>
+          <li><strong style="color:#e8eaed">Higher timeframe SSL</strong> represents larger pools with more institutional interest.</li>
+        </ul>`
+      },
+      {
+        label: '4. Liquidity Sweeps — The Mechanism',
+        content: `<p>A <strong style="color:#e8eaed">liquidity sweep</strong> (also called a liquidity grab, stop hunt, or false breakout) occurs when price moves beyond a known liquidity level — triggering the resting orders there — and then reverses sharply in the opposite direction. It is one of the most powerful concepts in Smart Money and ICT methodology.</p>
+        <div class="key-box" style="background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.25);border-left:3px solid #fb923c;border-radius:0 8px 8px 0;padding:14px 20px;margin:16px 0;">
+          <span style="font-size:10px;letter-spacing:3px;color:#fb923c;text-transform:uppercase;font-weight:600;">CORE CONCEPT</span>
+          <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;">A liquidity sweep is NOT a genuine breakout. It is a deliberate engineered move to collect orders, after which the real directional move begins.</p>
+        </div>
+        <div class="two-col">
+          <div class="info-card">
+            <h4>BSL Sweep Mechanics</h4>
+            <p>Price breaks above swing high → retail shorts stopped out + FOMO buyers enter → smart money sells into the demand → sharp reversal downward. Signal: shooting star / bearish engulfing + BOS downside.</p>
+          </div>
+          <div class="info-card">
+            <h4>SSL Sweep Mechanics</h4>
+            <p>Price drops below swing low → retail longs stopped out + breakout sellers enter → smart money buys into the supply → sharp reversal upward. Signal: bullish pin bar / engulfing + CHoCH upside.</p>
+          </div>
+        </div>
+        <h3 style="margin-top:20px;">Key Characteristics of a Valid Liquidity Sweep</h3>
+        <ul>
+          <li><strong style="color:#e8eaed">Speed:</strong> The sweep and reversal happen quickly — often within a single candle or a few candles.</li>
+          <li><strong style="color:#e8eaed">Wick prominence:</strong> The sweeping candle often has a prominent wick that pierces beyond the level.</li>
+          <li><strong style="color:#e8eaed">Volume spike:</strong> Institutional buying/selling creates a noticeable volume surge at the sweep point.</li>
+          <li><strong style="color:#e8eaed">Clean reversal:</strong> After the sweep, price should not return to the swept level immediately.</li>
+          <li><strong style="color:#e8eaed">Higher timeframe confluence:</strong> Sweeps aligned with HTF structure carry significantly more weight.</li>
+        </ul>`
+      },
+      {
+        label: '5. The Full Liquidity Cycle',
+        content: `<p>Understanding BSL and SSL in isolation is useful, but recognizing how they interact creates a complete market narrative. Markets move from one liquidity pool to another in a predictable cycle:</p>
+        <div class="cycle-steps" style="display:flex;flex-direction:column;gap:12px;margin:20px 0;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.4);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fb923c;font-weight:700;">1</div>
+            <div><strong style="color:#e8eaed;">Accumulation at SSL:</strong> <span style="color:#9ca3af;font-size:13px;">Price sweeps below a swing low (SSL sweep), stops out retail longs, and smart money accumulates a long position at discounted prices.</span></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.4);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fb923c;font-weight:700;">2</div>
+            <div><strong style="color:#e8eaed;">Markup Phase:</strong> <span style="color:#9ca3af;font-size:13px;">Price begins moving upward, respecting the new demand zone created at the SSL sweep point. Higher highs and higher lows form.</span></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.4);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fb923c;font-weight:700;">3</div>
+            <div><strong style="color:#e8eaed;">Distribution at BSL:</strong> <span style="color:#9ca3af;font-size:13px;">Price reaches the BSL zone above swing highs. Smart money begins distributing (selling) into the BSL sweep, offloading longs at premium prices.</span></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.4);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fb923c;font-weight:700;">4</div>
+            <div><strong style="color:#e8eaed;">Markdown Phase:</strong> <span style="color:#9ca3af;font-size:13px;">Price reverses from the BSL zone and begins moving downward toward the next SSL pool. Lower highs and lower lows form.</span></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="min-width:28px;height:28px;border-radius:50%;background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.4);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fb923c;font-weight:700;">5</div>
+            <div><strong style="color:#e8eaed;">Repeat:</strong> <span style="color:#9ca3af;font-size:13px;">The cycle continues as price moves between liquidity pools, sweeping and reversing at each major level across all timeframes.</span></div>
+          </div>
+        </div>
+        <div class="key-box" style="background:rgba(245,197,66,0.05);border:1px solid rgba(245,197,66,0.2);border-left:3px solid #f5c542;border-radius:0 8px 8px 0;padding:14px 20px;margin:16px 0;">
+          <span style="font-size:10px;letter-spacing:3px;color:#f5c542;text-transform:uppercase;font-weight:600;">TRADER EDGE</span>
+          <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;line-height:1.7;">The trader's job is NOT to predict direction — it is to identify WHERE the next liquidity pool is and WAIT for the sweep to be confirmed before entering.</p>
+        </div>`
+      },
+      {
+        label: '6. Multi-Timeframe Liquidity Analysis',
+        content: `<p>Liquidity sweeps are <strong style="color:#e8eaed">fractal</strong> — they occur on every timeframe. However, higher timeframe sweeps carry greater significance and indicate larger institutional moves:</p>
+        <ul>
+          <li><strong style="color:#e8eaed">Monthly / Weekly charts:</strong> Major liquidity pools; sweeps here signal large-scale trend changes lasting weeks to months.</li>
+          <li><strong style="color:#e8eaed">Daily chart:</strong> Intermediate liquidity; sweeps commonly define weekly trading ranges and intraday bias.</li>
+          <li><strong style="color:#e8eaed">4H / 1H charts:</strong> Intraday liquidity; used to time entries after a daily sweep is confirmed.</li>
+          <li><strong style="color:#e8eaed">15M / 5M charts:</strong> Micro sweeps used for precision entries once direction is confirmed on HTF.</li>
+        </ul>
+        <p>The recommended approach is <strong style="color:#e8eaed">top-down analysis</strong>: identify the HTF liquidity pool, wait for the sweep on the HTF, then zoom into lower timeframes to find a low-risk, high-reward entry with a tight stop.</p>
         <div class="tags">
           <span class="tag">BSL</span>
           <span class="tag">SSL</span>
           <span class="tag">Equal Highs/Lows</span>
           <span class="tag">Stop Hunt</span>
           <span class="tag">PDH/PDL</span>
+          <span class="tag">CHoCH</span>
+          <span class="tag">BOS</span>
           <span class="tag">Asian Range</span>
+          <span class="tag">Top-Down Analysis</span>
         </div>`
       },
       {
-        label: 'Anatomy of a Liquidity Sweep',
-        content: `<p>A classic sweep follows a predictable sequence: <strong style="color:#e8eaed">(1) Consolidation</strong> builds visible highs/lows. <strong style="color:#e8eaed">(2) Price extends</strong> beyond the obvious level — triggering stops and appearing to breakout. <strong style="color:#e8eaed">(3) Sharp reversal</strong> — the "breakout" fails instantly; price reverses aggressively with large candles. <strong style="color:#e8eaed">(4) Expansion</strong> in the true direction follows.</p>
-        <p>The sweep candle often has a <em>long wick</em> through the liquidity pool but closes back on the other side — a classic trap. Volume spikes confirm institutional activity at the sweep.</p>`
+        label: '7. Common Mistakes to Avoid',
+        content: `<ul>
+          <li><strong style="color:#e8eaed">Mistaking a genuine breakout for a sweep:</strong> Not every break of a high/low is a sweep. Always confirm with a reversal candlestick structure before entering.</li>
+          <li><strong style="color:#e8eaed">Entering too early:</strong> Entering before the sweep is complete risks being stopped out by the sweeping move itself — wait for the candle to close back inside the range.</li>
+          <li><strong style="color:#e8eaed">Ignoring HTF context:</strong> A BSL sweep on a 5M chart means little if the HTF trend is strongly bullish. Always anchor your bias on the higher timeframe.</li>
+          <li><strong style="color:#e8eaed">Over-trading:</strong> Liquidity sweeps are relatively rare, high-quality setups. Patience is the edge — missing a setup is far better than forcing one.</li>
+          <li><strong style="color:#e8eaed">Stop placement at the level:</strong> Always place your stop <em>beyond</em> the sweep wick — smart money may briefly re-test the zone before the move continues.</li>
+        </ul>
+        <div class="key-box" style="background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.25);border-left:3px solid #fb923c;border-radius:0 8px 8px 0;padding:14px 20px;margin:16px 0;">
+          <span style="font-size:10px;letter-spacing:3px;color:#fb923c;text-transform:uppercase;font-weight:600;">FINAL THOUGHT</span>
+          <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;line-height:1.7;">Markets are not random. They are engineered. Learn to read the engineering, and you will trade with the institutions — not against them.</p>
+        </div>`
       }
     ],
     strategy: {
-      name: 'Liquidity Sweep Reversal Strategy',
-      desc: 'Fading the liquidity sweep — entering in the true direction after institutions have hunted stops and reversed. One of the highest R:R setups in smart money trading.',
+      name: 'Liquidity Sweep & Reverse Strategy',
+      desc: 'Fading the liquidity sweep — entering in the true direction after institutions have hunted stops and reversed. Uses CHoCH/BOS confirmation on a lower timeframe for precision entry. One of the highest R:R setups in smart money trading.',
       chart: drawLiquidityStrategyDiagram,
       steps: [
-        { n:'1', title:'Mark Liquidity Pools', text:'On the <strong>H4 and H1 chart</strong>, identify clear BSL (above equal highs, PDH) and SSL (below equal lows, PDL). These are your watch zones. Mark them prominently.' },
-        { n:'2', title:'Wait for the Hunt', text:'Let price sweep through the liquidity pool — wick or full candle close beyond the level. <strong>Do not enter during the sweep</strong>. The sweep is the signal to get ready, not to trade.' },
-        { n:'3', title:'Confirm the Reversal', text:'Look for a <strong>strong rejection candle</strong> (pin bar, engulfing) that sweeps the level and closes back inside the previous range on H1. This is your confirmation the hunt is complete.' },
-        { n:'4', title:'Entry on M15 Structure Shift', text:'Drop to M15. Look for a <strong>market structure shift</strong> in the reversal direction — a break of a short-term high (after SSL sweep) or break of a short-term low (after BSL sweep).' },
-        { n:'5', title:'Tight Stop, Large Target', text:'Stop loss goes <strong>beyond the sweep wick extreme</strong> (very tight — 10–15 pips). Target: the opposite liquidity pool or the next major HTF PD array (FVG, support/resistance). Typical R:R: <strong>3:1 to 10:1</strong>.' }
+        { n:'1', title:'Mark Liquidity Pools', text:'On the <strong>H4 and H1 chart</strong>, identify clear BSL (above equal highs, PDH) and SSL (below equal lows, PDL). These are your watch zones. Mark them with clearly visible boxes or lines.' },
+        { n:'2', title:'Wait for the Hunt', text:'Let price sweep through the liquidity pool — wick or full candle close beyond the level. <strong>Do not enter during the sweep</strong>. The sweep is the signal to get ready, not to trade. Patience is everything here.' },
+        { n:'3', title:'Confirm the Reversal', text:'Look for a <strong>strong rejection candle</strong> (pin bar, engulfing) that sweeps the level and closes back inside the previous range on H1. A <strong>Change of Character (CHoCH)</strong> or BOS on H1 adds strong confluence.' },
+        { n:'4', title:'Entry on M15 Structure Shift', text:'Drop to M15. Look for a <strong>market structure shift</strong> in the reversal direction — a break of a short-term high (after SSL sweep) or break of a short-term low (after BSL sweep). Enter on the MSS candle close.' },
+        { n:'5', title:'Risk Management', text:'Stop loss goes <strong>beyond the sweep wick extreme</strong> (10–15 pips buffer). Risk no more than <strong>1–2% of capital</strong>. Target: the opposite liquidity pool. Minimum 1:2 R:R; many setups offer <strong>3:1 to 10:1</strong> when targeting opposing pools.' }
       ]
     }
+  },
+
+  volume: {
+    accent: '#22d3ee',
+    tag: 'Volume Analysis',
+    title: 'Volume & Volume Profile',
+    subtitle: 'Volume is the market\'s polygraph — it reveals the conviction behind every price move. Volume Profile takes this further, showing exactly where the most trading activity occurred within any time range, exposing institutional footprints invisible on a standard chart.',
+    chart: drawVolumeChart,
+    sections: [
+      {
+        label: '1. Understanding Volume',
+        content: `<p><strong style="color:#e8eaed">Volume</strong> is the total number of shares, contracts, or lots traded during a given time period. It is the most fundamental market data point after price itself — and arguably more important, because price without volume context can be deeply misleading.</p>
+        <p>Volume represents <em>conviction</em>. A price move on high volume signals strong participation and commitment. The same move on low volume signals lack of interest, potential exhaustion, or manipulation.</p>
+        <div class="two-col">
+          <div class="info-card">
+            <h4>High Volume</h4>
+            <p>Large number of participants transacting. Indicates institutional involvement, breakout validity, trend strength, or high-impact news-driven moves. Harder to reverse.</p>
+          </div>
+          <div class="info-card">
+            <h4>Low Volume</h4>
+            <p>Few participants. Indicates low conviction, potential false breakout, accumulation/distribution phase, or pre-news consolidation. Moves are easier to reverse.</p>
+          </div>
+        </div>
+        <h3 style="margin-top:20px;">Volume Principles Every Trader Should Know</h3>
+        <ul>
+          <li><strong style="color:#e8eaed">Volume confirms trend:</strong> Rising price with rising volume = healthy uptrend. Rising price with falling volume = trend weakening, potential reversal ahead.</li>
+          <li><strong style="color:#e8eaed">Volume leads price:</strong> A volume spike often precedes a significant price move — institutions are positioning before the crowd notices.</li>
+          <li><strong style="color:#e8eaed">Breakout validation:</strong> A breakout on high volume is far more reliable than one on thin volume. Low-volume breakouts frequently fail and reverse.</li>
+          <li><strong style="color:#e8eaed">Exhaustion volume:</strong> A massive volume spike after a long trend (climax volume) often signals the END of a move — institutional distribution or accumulation at extremes.</li>
+          <li><strong style="color:#e8eaed">Volume divergence:</strong> Price makes a new high but volume is declining — a classic warning sign that smart money is no longer buying the rally.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Conviction</span>
+          <span class="tag">Breakout Validation</span>
+          <span class="tag">Climax Volume</span>
+          <span class="tag">Divergence</span>
+          <span class="tag">Order Flow</span>
+        </div>`
+      },
+      {
+        label: '2. What Is Volume Profile?',
+        content: `<p><strong style="color:#e8eaed">Volume Profile</strong> is an advanced charting tool that displays the amount of trading volume traded at each price level over a specified time range — rather than over time (like a standard volume bar). The result is a horizontal histogram plotted on the price axis, showing exactly <em>where</em> the market spent the most time and transacted the most volume.</p>
+        <p>Unlike conventional volume bars which show <em>when</em> volume occurred, Volume Profile answers: <strong style="color:#e8eaed">"At which price did participants agree to transact the most?"</strong> — a fundamentally more powerful question for finding institutional interest zones.</p>
+        <div class="two-col">
+          <div class="info-card">
+            <h4>Point of Control (POC)</h4>
+            <p>The single price level with the highest traded volume in the profile. This is the "fairest price" — the level the market returns to most often. Acts as a magnet and pivot point.</p>
+          </div>
+          <div class="info-card">
+            <h4>Value Area (VA)</h4>
+            <p>The price range containing 70% of the total volume traded. The Value Area High (VAH) and Value Area Low (VAL) are critical reference points for support, resistance, and range trading.</p>
+          </div>
+          <div class="info-card">
+            <h4>High Volume Nodes (HVN)</h4>
+            <p>Price levels with significantly above-average volume. Markets tend to consolidate at HVNs — price moves through them slowly as participants are readily available on both sides.</p>
+          </div>
+          <div class="info-card">
+            <h4>Low Volume Nodes (LVN)</h4>
+            <p>Price levels with little traded volume — thin areas where price moved quickly. When re-visited, price tends to move fast through LVNs, as there are few resting orders to slow it down.</p>
+          </div>
+        </div>`
+      },
+      {
+        label: '3. Types of Volume Profile',
+        content: `<ul>
+          <li><strong style="color:#e8eaed">Session Volume Profile (SVP):</strong> Covers a single trading session (day). Ideal for intraday traders to find the day's POC, VAH, VAL and plan entries around them.</li>
+          <li><strong style="color:#e8eaed">Fixed Range Volume Profile (FRVP):</strong> Applied to a manually selected range — e.g., a week, a swing, or a consolidation zone. Reveals the distribution of volume within that specific move or structure.</li>
+          <li><strong style="color:#e8eaed">Visible Range Volume Profile (VRVP):</strong> Calculates volume for whatever range is currently visible on your chart. Updates dynamically as you scroll — useful for quick contextual reads.</li>
+          <li><strong style="color:#e8eaed">Composite Volume Profile:</strong> Aggregates volume across multiple sessions (weeks or months). Used to find macro POC, VAH, VAL levels for swing and position traders.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">POC</span>
+          <span class="tag">Value Area</span>
+          <span class="tag">VAH / VAL</span>
+          <span class="tag">HVN</span>
+          <span class="tag">LVN</span>
+          <span class="tag">VWAP</span>
+          <span class="tag">Session Profile</span>
+        </div>`
+      },
+      {
+        label: '4. Reading Volume Profile Shapes',
+        content: `<p>The <em>shape</em> of a volume profile tells a story about market structure and participant behavior:</p>
+        <div class="two-col">
+          <div class="info-card">
+            <h4>D-Shape (Normal Distribution)</h4>
+            <p>Bell-curve shaped profile. Market spent time at a fair equilibrium. POC is in the middle. Indicates balanced, rotational market conditions — expect mean-reversion trades.</p>
+          </div>
+          <div class="info-card">
+            <h4>B-Shape (Double Distribution)</h4>
+            <p>Two distinct POC areas separated by an LVN. Price accepted two different value areas — often signals a transition between two regimes or a shift in institutional positioning.</p>
+          </div>
+          <div class="info-card">
+            <h4>P-Shape (Buying Tail)</h4>
+            <p>High volume at the top, thin tail at the bottom. Indicates that price was rejected from lower levels and buyers stepped in aggressively. Bullish structure — buying tail = demand below.</p>
+          </div>
+          <div class="info-card">
+            <h4>b-Shape (Selling Tail)</h4>
+            <p>High volume at the bottom, thin tail at the top. Indicates that price was rejected from higher levels and sellers dominated. Bearish structure — selling tail = supply above.</p>
+          </div>
+        </div>`
+      },
+      {
+        label: '5. Volume Profile + Smart Money Confluence',
+        content: `<p>Volume Profile becomes exceptionally powerful when combined with Smart Money Concepts. The combination reveals not just <em>where</em> liquidity pools exist, but <em>how much institutional participation</em> occurred at those levels:</p>
+        <ul>
+          <li><strong style="color:#e8eaed">POC as a liquidity magnet:</strong> The Point of Control often aligns with major liquidity pools — price gravitates back toward the POC after sweeping BSL or SSL, making it a powerful TP target.</li>
+          <li><strong style="color:#e8eaed">LVN as acceleration zones:</strong> Liquidity sweeps through Low Volume Nodes move rapidly — price has little resistance passing through. Expect fast moves when a sweep targets an LVN area.</li>
+          <li><strong style="color:#e8eaed">HVN as institutional support/resistance:</strong> High Volume Nodes are where smart money transacted heavily — they defend these areas, creating strong S/R that aligns with ICT order blocks.</li>
+          <li><strong style="color:#e8eaed">VAH/VAL as session boundaries:</strong> Trading above VAH signals bullish acceptance; below VAL signals bearish acceptance. Rejection at VAH/VAL after a sweep = high-probability reversal setup.</li>
+          <li><strong style="color:#e8eaed">FVG + LVN confluence:</strong> A Fair Value Gap overlapping with a Low Volume Node creates a double-magnet — price will move through quickly but then snap back to fill both imbalances.</li>
+        </ul>`
+      }
+    ],
+    strategy: {
+      name: 'POC Reversion + Liquidity Sweep Strategy',
+      desc: 'Combining Volume Profile\'s Point of Control with a liquidity sweep confirmation for a high-probability mean-reversion trade. This strategy identifies the "fair value" price (POC) as the target after a sweep traps breakout participants on the wrong side.',
+      chart: drawVolumeStrategyDiagram,
+      steps: [
+        { n:'1', title:'Build the Volume Profile', text:'Apply a <strong>Fixed Range Volume Profile</strong> to the most recent swing or session on the H1/H4 chart. Identify the <strong>POC, VAH, VAL, and any major LVNs</strong>. These become your reference levels.' },
+        { n:'2', title:'Spot the Liquidity Pool', text:'Identify <strong>BSL or SSL</strong> sitting beyond the VAH or VAL respectively. A swing high sitting just above the VAH — or a swing low just below the VAL — is a prime setup zone. Mark these levels.' },
+        { n:'3', title:'Wait for the Sweep into LVN', text:'Watch for price to push through the VAH/VAL and sweep into a <strong>Low Volume Node</strong>. Moves through LVNs are fast — the sweep will look aggressive and convincing, trapping breakout traders.' },
+        { n:'4', title:'Confirm Reversal & Entry', text:'Look for a <strong>rejection candle + CHoCH on M15</strong> confirming the sweep is complete. Enter in the direction of the POC. The POC acts as a gravitational pull — price wants to return to where the most volume traded.' },
+        { n:'5', title:'Target POC & Opposing VA', text:'<strong>TP1: The POC</strong> (often 1.5:1 to 2:1 R:R). <strong>TP2: The opposite VAH/VAL boundary</strong> (2:1 to 4:1 R:R). Stop loss beyond the sweep wick extreme. Typically a clean 2:1–4:1 setup with a logical institutional narrative.' }
+      ]
+    }
+  }
+};
+
+/* ─── ORDER BLOCK TOPIC ─── */
+topics.orderblock = {
+  accent: '#a3e635',
+  tag: 'ICT / Smart Money Concept',
+  title: 'Order Blocks',
+  subtitle: 'An Order Block is the last opposing candle before a significant impulsive price move — the fingerprint left by institutional participants as they accumulated or distributed large positions. It is the single most important Price Delivery Array in the ICT methodology.',
+  chart: drawOrderBlockChart,
+  sections: [
+    {
+      label: '1. What Is an Order Block?',
+      content: `<p>An <strong style="color:#e8eaed">Order Block (OB)</strong> is a specific price zone, defined by the body of the last bearish candle before a significant bullish move (Bullish OB), or the last bullish candle before a significant bearish move (Bearish OB). It marks the precise area where institutional orders were placed to launch a large directional move.</p>
+      <p>Unlike support and resistance, which are drawn where price has <em>reacted</em>, an Order Block is drawn where institutions <em>placed their orders</em> — a subtle but critical distinction. The OB tells you where smart money entered; the subsequent impulse confirms it.</p>
+      <div class="key-box" style="background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.22);border-left:3px solid #a3e635;border-radius:0 8px 8px 0;padding:16px 20px;margin:16px 0;">
+        <span style="font-size:10px;letter-spacing:3px;color:#a3e635;text-transform:uppercase;font-weight:600;">CORE PRINCIPLE</span>
+        <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;line-height:1.7;">An Order Block is where an institution placed a large order — the subsequent impulsive move is the proof. When price returns to that zone, those resting institutional orders are still there, waiting to be re-engaged.</p>
+      </div>
+      <div class="two-col">
+        <div class="info-card">
+          <h4>Bullish Order Block</h4>
+          <p>The <strong>last bearish (red/down) candle</strong> before a strong bullish impulse move. Identified by the candle body. When price returns to this zone, institutions buy — creating a high-probability long entry.</p>
+        </div>
+        <div class="info-card">
+          <h4>Bearish Order Block</h4>
+          <p>The <strong>last bullish (green/up) candle</strong> before a strong bearish impulse move. When price returns to this zone, institutions sell — creating a high-probability short entry.</p>
+        </div>
+      </div>`
+    },
+    {
+      label: '2. How to Identify a Valid Order Block',
+      content: `<p>Not every candle before an impulse qualifies as a valid Order Block. There are specific criteria that separate high-probability OBs from noise:</p>
+      <div class="key-box" style="background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.22);border-left:3px solid #a3e635;border-radius:0 8px 8px 0;padding:14px 20px;margin:16px 0;">
+        <span style="font-size:10px;letter-spacing:3px;color:#a3e635;text-transform:uppercase;font-weight:600;">IDENTIFICATION CHECKLIST</span>
+        <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;">Use all 5 criteria to score an OB. 4–5 = high quality. 2–3 = use with caution. Below 2 = skip.</p>
+      </div>
+      <ul>
+        <li><strong style="color:#e8eaed">① The Impulse Criterion:</strong> The candle directly after the OB must be impulsive — a large-bodied, fast-moving candle that creates a Fair Value Gap (FVG) or breaks market structure. Weak moves after the OB = weak OB.</li>
+        <li><strong style="color:#e8eaed">② Displacement Requirement:</strong> The move away from the OB must leave behind a noticeable imbalance — an FVG between the OB candle and the candle that follows it. No displacement = no valid OB.</li>
+        <li><strong style="color:#e8eaed">③ Untested (Fresh) Zone:</strong> A valid OB is one price has NOT yet returned to. Once price revisits and trades fully through an OB, it is "mitigated" and loses its significance. Always trade fresh OBs.</li>
+        <li><strong style="color:#e8eaed">④ Higher Timeframe Context:</strong> OBs on Daily/4H are far more powerful than those on M5. An OB aligned with the HTF bias and occurring near a major liquidity pool carries maximum weight.</li>
+        <li><strong style="color:#e8eaed">⑤ Market Structure Alignment:</strong> Only trade bullish OBs in an overall uptrend (bullish market structure), and bearish OBs in a downtrend. Counter-trend OBs have a much lower success rate.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Last Bearish Candle</span>
+        <span class="tag">Impulse After OB</span>
+        <span class="tag">FVG Displacement</span>
+        <span class="tag">Fresh / Untested</span>
+        <span class="tag">HTF Alignment</span>
+        <span class="tag">Market Structure</span>
+      </div>`
+    },
+    {
+      label: '3. Types of Order Blocks',
+      content: `<p>Order Blocks come in several varieties — each with its own formation logic, reliability tier, and trade management approach:</p>
+      <div class="two-col">
+        <div class="info-card">
+          <h4>Standard Bullish OB</h4>
+          <p>Last red/bearish candle before a bullish impulse. The <strong>entire candle body</strong> defines the zone (open to close). Most common OB type — forms during pullbacks in an uptrend.</p>
+        </div>
+        <div class="info-card">
+          <h4>Standard Bearish OB</h4>
+          <p>Last green/bullish candle before a bearish impulse. Zone spans the candle body. Forms during rallies in a downtrend — look for it at the top of a retracement.</p>
+        </div>
+        <div class="info-card">
+          <h4>Breaker Block</h4>
+          <p>A <strong>failed Order Block</strong> that has been violated. When price breaks through an OB (invalidating it), the OB flips polarity — a bullish OB that fails becomes a bearish Breaker Block, and vice versa. Often one of the most powerful trade locations.</p>
+        </div>
+        <div class="info-card">
+          <h4>Mitigation Block</h4>
+          <p>An OB that price has partially visited but NOT fully closed through. A partial touch respects the zone — it remains valid for another entry attempt. Distinguished from a fully mitigated (broken) OB.</p>
+        </div>
+        <div class="info-card">
+          <h4>Rejection Block</h4>
+          <p>Formed by a candle with a long wick — the wick itself (not the body) defines the zone. Represents a sharp institutional rejection. Often forms at the extreme of a liquidity sweep.</p>
+        </div>
+        <div class="info-card">
+          <h4>Void / Propulsion Block</h4>
+          <p>A series of OBs stacked in the same direction — a <strong>propulsion block</strong> — indicating consecutive institutional participation at the same price area. Extremely high-probability zone when price returns.</p>
+        </div>
+      </div>`
+    },
+    {
+      label: '4. Order Block vs. Support & Resistance',
+      content: `<p>Many traders confuse Order Blocks with traditional support and resistance. They are related but fundamentally different:</p>
+      <div class="two-col">
+        <div class="info-card">
+          <h4>Traditional S/R</h4>
+          <p>Drawn at pivot highs/lows where price has <em>reacted</em>. Based on where price went — not why it went there. Subjective, widely known, easily targeted by institutions for stop hunts.</p>
+        </div>
+        <div class="info-card">
+          <h4>Order Blocks</h4>
+          <p>Defined by the last opposing candle before an impulse — where institutions <em>placed orders</em>. Rooted in causation, not correlation. Precise, specific, and often invisible to retail traders.</p>
+        </div>
+      </div>
+      <p>The key practical difference: <strong style="color:#e8eaed">S/R tells you where price reacted; an OB tells you WHY it reacted.</strong> An OB that coincides with a traditional S/R level and a liquidity sweep creates a three-layer confluence — one of the strongest trade setups available.</p>
+      <ul>
+        <li><strong style="color:#e8eaed">Precision:</strong> OBs are defined by a specific candle, giving a precise entry zone — not a vague "area."</li>
+        <li><strong style="color:#e8eaed">Causation:</strong> OBs explain <em>why</em> price moved — institutional order placement — rather than just noting where it did.</li>
+        <li><strong style="color:#e8eaed">Time-sensitive:</strong> Unlike S/R, OBs lose relevance once mitigated. They are traded once — their power is in their freshness.</li>
+        <li><strong style="color:#e8eaed">Lower timeframe refinement:</strong> An OB on the 4H can be refined on the 15M for a tighter entry, reducing risk and improving R:R.</li>
+      </ul>`
+    },
+    {
+      label: '5. Order Block Zones & The 50% Line',
+      content: `<p>Within a valid OB, there are two key reference points for entry precision:</p>
+      <ul>
+        <li><strong style="color:#e8eaed">Full OB Zone (Open to Close of candle):</strong> The entire body of the OB candle. Conservative entries wait for price to enter this zone — ensuring the OB is actually being tested before committing.</li>
+        <li><strong style="color:#e8eaed">The 50% Optimal Trade Entry (OTE):</strong> The midpoint of the OB candle's body. The most precise entry level within the OB — analogous to the Consequent Encroachment in FVGs. Entering at the 50% minimizes risk while maximizing reward.</li>
+        <li><strong style="color:#e8eaed">The OB Wick:</strong> The wicks of the OB candle represent the outer boundary. Stop losses go beyond the wick — not just the body — to survive stop hunts that briefly pierce the OB before reversing.</li>
+      </ul>
+      <div class="key-box" style="background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.22);border-left:3px solid #a3e635;border-radius:0 8px 8px 0;padding:14px 20px;margin:16px 0;">
+        <span style="font-size:10px;letter-spacing:3px;color:#a3e635;text-transform:uppercase;font-weight:600;">ENTRY PRECISION RULE</span>
+        <p style="margin:8px 0 0;font-size:13px;color:#e8eaed;line-height:1.7;">For maximum R:R: Enter at the 50% OTE of the OB. Stop below the OB wick. Target the next liquidity pool or FVG. This setup routinely produces 3:1 to 8:1 risk-to-reward ratios.</p>
+      </div>`
+    },
+    {
+      label: '6. Multi-Timeframe Order Block Confluence',
+      content: `<p>The true power of Order Blocks emerges when aligned across multiple timeframes. A single OB is interesting. An OB that exists simultaneously on the Daily, 4H, and 1H charts — all at the same price zone — is a <strong style="color:#e8eaed">confluence kill-zone</strong>.</p>
+      <ul>
+        <li><strong style="color:#e8eaed">Weekly OB:</strong> Defines the macro directional bias. Sweeps of weekly OBs launch multi-week trends. Rarely retested but extremely powerful when they are.</li>
+        <li><strong style="color:#e8eaed">Daily OB:</strong> Sets the weekly range. Intraday price often retraces to test daily OBs during London or NY sessions before continuing the trend.</li>
+        <li><strong style="color:#e8eaed">4H OB:</strong> The workhouse timeframe for swing traders. 4H OBs within daily structure provide excellent risk/reward with manageable stops.</li>
+        <li><strong style="color:#e8eaed">1H OB:</strong> Refined entry zones for intraday trades. Use 1H OBs for timing entries after a 4H or Daily OB is confirmed as support/resistance.</li>
+        <li><strong style="color:#e8eaed">15M / 5M OB:</strong> Precision entry refinement. Drop to M15 to find the specific OB within the HTF zone for the tightest possible stop.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Bullish OB</span>
+        <span class="tag">Bearish OB</span>
+        <span class="tag">Breaker Block</span>
+        <span class="tag">Mitigation Block</span>
+        <span class="tag">50% OTE</span>
+        <span class="tag">Propulsion Block</span>
+        <span class="tag">HTF Confluence</span>
+      </div>`
+    },
+    {
+      label: '7. Common Order Block Mistakes',
+      content: `<ul>
+        <li><strong style="color:#e8eaed">Marking every candle before a move:</strong> Only the <em>last</em> opposing candle before the impulse qualifies. Going back further introduces noise and weakens the setup.</li>
+        <li><strong style="color:#e8eaed">Trading a mitigated OB:</strong> Once price has fully closed through an OB body, it is used up. Trading a spent OB is one of the most common and costly mistakes.</li>
+        <li><strong style="color:#e8eaed">Ignoring the displacement requirement:</strong> If the move away from the OB is weak or gradual (no FVG, no strong impulse), the zone was likely not used by institutions — skip it.</li>
+        <li><strong style="color:#e8eaed">Confusing wicks for bodies:</strong> Standard OBs use the candle <em>body</em> (open to close), not the wick, for the zone. Wick-based OBs are a separate concept (Rejection Blocks).</li>
+        <li><strong style="color:#e8eaed">Trading counter-trend OBs without confirmation:</strong> A bearish OB in a strong bullish trend has far lower probability. Require additional confirmation (liquidity sweep, HTF resistance) before trading against structure.</li>
+        <li><strong style="color:#e8eaed">Not waiting for price to reach the zone:</strong> Entering before price returns to the OB removes the edge entirely. The OB is the target — patience until price delivers to the zone is non-negotiable.</li>
+      </ul>`
+    }
+  ],
+  strategy: {
+    name: 'Order Block Retest Entry Strategy',
+    desc: 'Waiting for price to return and test a fresh, high-quality Order Block aligned with HTF structure — then entering with a precise stop and targeting the next liquidity pool. One of the cleanest setups in institutional trading.',
+    chart: drawOrderBlockStrategyDiagram,
+    steps: [
+      { n:'1', title:'Establish HTF Bias', text:'Confirm the <strong>Daily or 4H market structure</strong>. Is price making higher highs and higher lows (bullish) or lower highs and lower lows (bearish)? Only trade OBs aligned with this bias — no counter-trend entries.' },
+      { n:'2', title:'Identify the Impulse & Mark the OB', text:'Find a strong <strong>impulsive move with displacement</strong> (a clear FVG left behind). The <strong>last opposing candle</strong> before that impulse is your OB. Draw the zone from the candle\'s open to its close. Mark the 50% OTE midline.' },
+      { n:'3', title:'Wait for Price to Return (Mitigation)', text:'Patience is the strategy. <strong>Do not chase</strong> — wait for price to retrace back into the OB zone. Set a price alert at the OB zone top. The deeper into the zone price enters, the tighter the stop and the better the R:R.' },
+      { n:'4', title:'LTF Confirmation Entry', text:'When price enters the OB, drop to <strong>M15 or M5</strong>. Look for a <em>bullish market structure shift</em> (for bullish OB) — a break of a short-term high within the OB zone. Enter on the close of the confirmation candle at the 50% OTE level.' },
+      { n:'5', title:'Stop Loss, Target & Management', text:'Stop loss: <strong>below the OB wick low</strong> (bullish OB) — not just the body. TP1: the nearest FVG or swing high (2:1 minimum). TP2: the BSL pool or next HTF OB. Move stop to breakeven at TP1. Typical R:R: <strong>3:1 to 8:1</strong>.' }
+    ]
   }
 };
 
@@ -1482,6 +1969,452 @@ function drawLiquidityStrategyDiagram() {
     <text x="290" y="325" fill="#fb923c" font-size="9" letter-spacing="1" text-anchor="middle">② SSL SWEEP</text>
     <text x="413" y="325" fill="#f5c542" font-size="9" letter-spacing="1" text-anchor="middle">③ ENTRY</text>
     <text x="520" y="325" fill="#00e5c3" font-size="9" letter-spacing="1" text-anchor="middle">④ EXPANSION</text>
+  </svg>`;
+}
+
+function drawVolumeChart() {
+  return `<svg width="100%" height="210" viewBox="0 0 800 210" preserveAspectRatio="none" style="display:block;font-family:monospace">
+    <defs>
+      <linearGradient id="vg1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <!-- grid -->
+    <line x1="0" y1="170" x2="800" y2="170" stroke="#1f2937" stroke-width="0.8"/>
+    <line x1="0" y1="130" x2="800" y2="130" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="0" y1="90" x2="800" y2="90" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="0" y1="50" x2="800" y2="50" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <!-- price area -->
+    <polyline points="0,140 60,130 110,100 160,80 210,70 260,85 310,110 360,130 410,120 460,95 510,75 560,55 610,45 660,52 710,40 760,32 800,28"
+      fill="none" stroke="#22d3ee" stroke-width="2"/>
+    <polygon points="0,140 60,130 110,100 160,80 210,70 260,85 310,110 360,130 410,120 460,95 510,75 560,55 610,45 660,52 710,40 760,32 800,28 800,170 0,170"
+      fill="url(#vg1)"/>
+    <!-- volume bars at bottom -->
+    <rect x="0"   y="178" width="28" height="22" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <rect x="35"  y="172" width="28" height="28" fill="#22d3ee" opacity="0.4" rx="1"/>
+    <rect x="70"  y="168" width="28" height="32" fill="#22d3ee" opacity="0.5" rx="1"/>
+    <rect x="105" y="162" width="28" height="38" fill="#22d3ee" opacity="0.6" rx="1"/>
+    <rect x="140" y="174" width="28" height="26" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <rect x="175" y="170" width="28" height="30" fill="#22d3ee" opacity="0.4" rx="1"/>
+    <!-- spike volume bar -->
+    <rect x="210" y="152" width="28" height="48" fill="#22d3ee" opacity="0.9" rx="1"/>
+    <text x="224" y="148" fill="#22d3ee" font-size="9" text-anchor="middle" letter-spacing="1">HIGH VOL</text>
+    <rect x="245" y="175" width="28" height="25" fill="#22d3ee" opacity="0.3" rx="1"/>
+    <rect x="280" y="178" width="28" height="22" fill="#22d3ee" opacity="0.3" rx="1"/>
+    <rect x="315" y="172" width="28" height="28" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <rect x="350" y="168" width="28" height="32" fill="#22d3ee" opacity="0.4" rx="1"/>
+    <rect x="385" y="165" width="28" height="35" fill="#22d3ee" opacity="0.5" rx="1"/>
+    <!-- another spike -->
+    <rect x="420" y="148" width="28" height="52" fill="#22d3ee" opacity="0.85" rx="1"/>
+    <text x="434" y="144" fill="#22d3ee" font-size="9" text-anchor="middle" letter-spacing="1">HIGH VOL</text>
+    <rect x="455" y="174" width="28" height="26" fill="#22d3ee" opacity="0.3" rx="1"/>
+    <rect x="490" y="178" width="28" height="22" fill="#22d3ee" opacity="0.25" rx="1"/>
+    <rect x="525" y="176" width="28" height="24" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <rect x="560" y="170" width="28" height="30" fill="#22d3ee" opacity="0.45" rx="1"/>
+    <rect x="595" y="173" width="28" height="27" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <rect x="630" y="168" width="28" height="32" fill="#22d3ee" opacity="0.4" rx="1"/>
+    <rect x="665" y="172" width="28" height="28" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <rect x="700" y="174" width="28" height="26" fill="#22d3ee" opacity="0.3" rx="1"/>
+    <rect x="735" y="170" width="28" height="30" fill="#22d3ee" opacity="0.4" rx="1"/>
+    <!-- low volume dip label -->
+    <text x="490" y="165" fill="#6b7280" font-size="9" text-anchor="middle" letter-spacing="1">LOW VOL</text>
+    <!-- label -->
+    <text x="10" y="20" fill="#22d3ee" font-family="monospace" font-size="11" letter-spacing="2">PRICE + VOLUME — TREND CONFIRMATION</text>
+  </svg>`;
+}
+
+function drawVolumeStrategyDiagram() {
+  return `<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" style="font-family:monospace">
+    <defs>
+      <marker id="arr-cyan" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#22d3ee"/>
+      </marker>
+      <marker id="arr-gold-v" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#f5c542"/>
+      </marker>
+    </defs>
+    <!-- background grid -->
+    <line x1="200" y1="20" x2="200" y2="310" stroke="#1f2937" stroke-width="1"/>
+    <line x1="200" y1="310" x2="840" y2="310" stroke="#1f2937" stroke-width="1"/>
+    <line x1="200" y1="80" x2="840" y2="80" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="200" y1="140" x2="840" y2="140" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="200" y1="200" x2="840" y2="200" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="200" y1="260" x2="840" y2="260" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+
+    <!-- ─── VOLUME PROFILE (left side) ─── -->
+    <text x="10" y="18" fill="#22d3ee" font-size="10" letter-spacing="2">VOLUME PROFILE</text>
+    <!-- HVN at top -->
+    <rect x="10" y="65" width="135" height="22" fill="#22d3ee" opacity="0.5" rx="2"/>
+    <text x="150" y="80" fill="#22d3ee" font-size="9">VAH / HVN</text>
+    <!-- value area body -->
+    <rect x="10" y="87" width="80" height="18" fill="#22d3ee" opacity="0.25" rx="1"/>
+    <rect x="10" y="105" width="110" height="18" fill="#22d3ee" opacity="0.3" rx="1"/>
+    <rect x="10" y="123" width="95" height="18" fill="#22d3ee" opacity="0.28" rx="1"/>
+    <rect x="10" y="141" width="130" height="18" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <!-- POC — widest bar -->
+    <rect x="10" y="159" width="165" height="22" fill="#22d3ee" opacity="0.9" rx="2"/>
+    <text x="180" y="174" fill="#22d3ee" font-size="9" font-weight="bold">POC</text>
+    <!-- value area below POC -->
+    <rect x="10" y="181" width="140" height="18" fill="#22d3ee" opacity="0.35" rx="1"/>
+    <rect x="10" y="199" width="100" height="18" fill="#22d3ee" opacity="0.28" rx="1"/>
+    <rect x="10" y="217" width="85" height="18" fill="#22d3ee" opacity="0.25" rx="1"/>
+    <rect x="10" y="235" width="115" height="22" fill="#22d3ee" opacity="0.5" rx="2"/>
+    <text x="130" y="250" fill="#22d3ee" font-size="9">VAL / HVN</text>
+    <!-- LVN zone below VAL -->
+    <rect x="10" y="257" width="30" height="14" fill="#22d3ee" opacity="0.1" rx="1"/>
+    <text x="45" y="268" fill="#6b7280" font-size="9">LVN</text>
+    <!-- BSL above VAH -->
+    <line x1="200" y1="50" x2="840" y2="50" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <text x="205" y="44" fill="#fb923c" font-size="9" letter-spacing="1">BSL — SWING HIGH (target for sweep)</text>
+    <!-- VAH line -->
+    <line x1="200" y1="75" x2="840" y2="75" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="750" y="72" fill="#22d3ee" font-size="9">VAH</text>
+    <!-- POC line -->
+    <line x1="200" y1="168" x2="840" y2="168" stroke="#22d3ee" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="750" y="164" fill="#22d3ee" font-size="9" font-weight="bold">POC</text>
+    <!-- VAL line -->
+    <line x1="200" y1="245" x2="840" y2="245" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="750" y="241" fill="#22d3ee" font-size="9">VAL</text>
+    <!-- SSL below VAL -->
+    <line x1="200" y1="280" x2="840" y2="280" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+
+    <!-- ─── PRICE ACTION (right side) ─── -->
+    <!-- candles in value area range -->
+    <rect x="230" y="155" width="20" height="30" fill="#374151" rx="1"/>
+    <line x1="240" y1="145" x2="240" y2="193" stroke="#6b7280" stroke-width="1.5"/>
+    <rect x="265" y="148" width="20" height="32" fill="#1d5c50" rx="1"/>
+    <line x1="275" y1="138" x2="275" y2="188" stroke="#00e5c3" stroke-width="1.5"/>
+    <rect x="300" y="140" width="20" height="30" fill="#1d5c50" rx="1"/>
+    <line x1="310" y1="130" x2="310" y2="178" stroke="#00e5c3" stroke-width="1.5"/>
+    <rect x="335" y="130" width="20" height="32" fill="#1d5c50" rx="1"/>
+    <line x1="345" y1="120" x2="345" y2="170" stroke="#00e5c3" stroke-width="1.5"/>
+    <rect x="370" y="115" width="20" height="30" fill="#1d5c50" rx="1"/>
+    <line x1="380" y1="105" x2="380" y2="153" stroke="#00e5c3" stroke-width="1.5"/>
+    <rect x="405" y="100" width="20" height="28" fill="#1d5c50" rx="1"/>
+    <line x1="415" y1="88" x2="415" y2="136" stroke="#00e5c3" stroke-width="1.5"/>
+    <rect x="440" y="88" width="20" height="26" fill="#1d5c50" rx="1"/>
+    <line x1="450" y1="77" x2="450" y2="122" stroke="#00e5c3" stroke-width="1.5"/>
+    <!-- SWEEP: price breaks above VAH into BSL LVN zone -->
+    <rect x="475" y="55" width="20" height="48" fill="#fb923c" opacity="0.7" rx="1"/>
+    <line x1="485" y1="36" x2="485" y2="115" stroke="#fb923c" stroke-width="2"/>
+    <!-- sweep wick pierces BSL -->
+    <ellipse cx="485" cy="37" rx="10" ry="6" fill="#fb923c" opacity="0.25"/>
+    <text x="485" y="28" fill="#fb923c" font-size="14" text-anchor="middle">↑</text>
+    <text x="530" y="32" fill="#fb923c" font-size="9" letter-spacing="1">BSL SWEEP</text>
+    <!-- SL above sweep wick -->
+    <line x1="475" y1="30" x2="840" y2="30" stroke="#ff4f6a" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="845" y="34" fill="#ff4f6a" font-size="9">SL</text>
+    <!-- reversal candles back down toward POC -->
+    <rect x="510" y="78" width="20" height="42" fill="#5c1d2a" rx="1"/>
+    <line x1="520" y1="65" x2="520" y2="128" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="545" y="105" width="20" height="48" fill="#5c1d2a" rx="1"/>
+    <line x1="555" y1="92" x2="555" y2="161" stroke="#ff4f6a" stroke-width="1.5"/>
+    <!-- entry annotation -->
+    <line x1="555" y1="105" x2="555" y2="72" stroke="#f5c542" stroke-width="1.5" marker-end="url(#arr-gold-v)"/>
+    <rect x="514" y="55" width="82" height="16" rx="3" fill="#1a1200" stroke="#f5c542" stroke-width="0.8"/>
+    <text x="555" y="67" fill="#f5c542" font-size="9" text-anchor="middle" letter-spacing="1">SHORT @ CHoCH</text>
+    <!-- price falls toward POC -->
+    <rect x="580" y="138" width="20" height="45" fill="#5c1d2a" rx="1"/>
+    <line x1="590" y1="125" x2="590" y2="191" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="615" y="152" width="20" height="35" fill="#374151" rx="1"/>
+    <line x1="625" y1="140" x2="625" y2="195" stroke="#6b7280" stroke-width="1.5"/>
+    <!-- TP1 at POC -->
+    <text x="625" y="185" fill="#f5c542" font-size="15" text-anchor="middle">↓</text>
+    <rect x="645" y="158" width="60" height="16" rx="3" fill="#1a1200" stroke="#f5c542" stroke-width="0.7"/>
+    <text x="675" y="170" fill="#f5c542" font-size="9" text-anchor="middle">TP1 = POC</text>
+    <!-- continues to VAL -->
+    <rect x="650" y="165" width="20" height="38" fill="#5c1d2a" rx="1"/>
+    <line x1="660" y1="153" x2="660" y2="211" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="685" y="192" width="20" height="40" fill="#5c1d2a" rx="1"/>
+    <line x1="695" y1="180" x2="695" y2="240" stroke="#ff4f6a" stroke-width="1.5"/>
+    <!-- TP2 at VAL -->
+    <text x="695" y="258" fill="#f5c542" font-size="15" text-anchor="middle">↓</text>
+    <rect x="710" y="248" width="68" height="16" rx="3" fill="#1a1200" stroke="#f5c542" stroke-width="0.7"/>
+    <text x="744" y="260" fill="#f5c542" font-size="9" text-anchor="middle">TP2 = VAL</text>
+    <!-- R:R badge -->
+    <rect x="700" y="80" width="130" height="42" rx="5" fill="#0d1117" stroke="#374151" stroke-width="1"/>
+    <text x="765" y="96" fill="#9ca3af" font-size="9" text-anchor="middle">RISK : REWARD</text>
+    <text x="765" y="114" fill="#22d3ee" font-size="14" text-anchor="middle" font-weight="bold">2:1 – 4:1</text>
+    <!-- phase labels -->
+    <text x="350" y="325" fill="#6b7280" font-size="9" letter-spacing="1" text-anchor="middle">① PRICE IN VALUE AREA</text>
+    <text x="485" y="325" fill="#fb923c" font-size="9" letter-spacing="1" text-anchor="middle">② BSL SWEEP</text>
+    <text x="600" y="325" fill="#f5c542" font-size="9" letter-spacing="1" text-anchor="middle">③ ENTRY</text>
+    <text x="700" y="325" fill="#22d3ee" font-size="9" letter-spacing="1" text-anchor="middle">④ TO POC → VAL</text>
+  </svg>`;
+}
+
+function drawOrderBlockChart() {
+  return `<svg width="100%" height="230" viewBox="0 0 860 230" preserveAspectRatio="xMidYMid meet" style="display:block;font-family:monospace">
+    <defs>
+      <linearGradient id="obg1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#a3e635" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#a3e635" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <!-- section labels -->
+    <text x="90"  y="16" fill="#6b7280" font-size="9" text-anchor="middle" letter-spacing="2">BULLISH OB</text>
+    <text x="430" y="16" fill="#6b7280" font-size="9" text-anchor="middle" letter-spacing="2">BREAKER BLOCK</text>
+    <text x="690" y="16" fill="#6b7280" font-size="9" text-anchor="middle" letter-spacing="2">BEARISH OB</text>
+
+    <!-- ─── PANEL 1: Bullish OB ─── -->
+    <!-- context candles descending -->
+    <rect x="20"  y="120" width="18" height="45" fill="#5c1d2a" rx="1"/>
+    <line x1="29"  y1="110" x2="29"  y2="170" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="46"  y="130" width="18" height="42" fill="#5c1d2a" rx="1"/>
+    <line x1="55"  y1="122" x2="55"  y2="178" stroke="#ff4f6a" stroke-width="1.5"/>
+    <!-- Bullish OB candle (last bearish before impulse) -->
+    <rect x="72"  y="148" width="22" height="46" fill="#a3e635" opacity="0.25" rx="2"/>
+    <rect x="72"  y="148" width="22" height="46" fill="none" stroke="#a3e635" stroke-width="1.5" rx="2"/>
+    <line x1="83"  y1="138" x2="83"  y2="200" stroke="#a3e635" stroke-width="1.5"/>
+    <!-- OB zone lines -->
+    <line x1="72"  y1="148" x2="200" y2="148" stroke="#a3e635" stroke-width="1.2" stroke-dasharray="5,3"/>
+    <line x1="72"  y1="194" x2="200" y2="194" stroke="#a3e635" stroke-width="1.2" stroke-dasharray="5,3"/>
+    <!-- 50% OTE line -->
+    <line x1="72"  y1="171" x2="200" y2="171" stroke="#a3e635" stroke-width="0.8" opacity="0.5"/>
+    <text x="203" y="175" fill="#a3e635" font-size="8" opacity="0.7">50%</text>
+    <!-- OB zone fill -->
+    <rect x="72"  y="148" width="128" height="46" fill="#a3e635" opacity="0.05"/>
+    <!-- impulse up candles -->
+    <rect x="100" y="90"  width="18" height="55" fill="#22c55e" opacity="0.85" rx="1"/>
+    <line x1="109" y1="78"  x2="109" y2="148" stroke="#22c55e" stroke-width="1.5"/>
+    <rect x="124" y="62"  width="18" height="45" fill="#22c55e" opacity="0.7" rx="1"/>
+    <line x1="133" y1="52"  x2="133" y2="110" stroke="#22c55e" stroke-width="1.5"/>
+    <!-- FVG imbalance after OB -->
+    <rect x="100" y="107" width="24" height="18" fill="#a3e635" opacity="0.15" rx="2"/>
+    <text x="125" y="119" fill="#a3e635" font-size="7" letter-spacing="1"> FVG</text>
+    <!-- retest of OB zone -->
+    <rect x="148" y="152" width="18" height="36" fill="#374151" rx="1"/>
+    <line x1="157" y1="143" x2="157" y2="195" stroke="#6b7280" stroke-width="1.5"/>
+    <!-- entry label -->
+    <text x="157" y="210" fill="#f5c542" font-size="14" text-anchor="middle">↑</text>
+    <text x="157" y="222" fill="#f5c542" font-size="8" text-anchor="middle" letter-spacing="1">ENTRY</text>
+    <!-- bounce up -->
+    <rect x="172" y="118" width="18" height="38" fill="#22c55e" opacity="0.7" rx="1"/>
+    <line x1="181" y1="108" x2="181" y2="158" stroke="#22c55e" stroke-width="1.5"/>
+    <!-- OB zone label -->
+    <text x="8" y="175" fill="#a3e635" font-size="8" letter-spacing="1">OB</text>
+
+    <!-- divider -->
+    <line x1="225" y1="20" x2="225" y2="220" stroke="#1f2937" stroke-width="1"/>
+
+    <!-- ─── PANEL 2: Breaker Block ─── -->
+    <!-- initial OB setup that BREAKS -->
+    <text x="245" y="40" fill="#6b7280" font-size="8" letter-spacing="1">① OB FORMS</text>
+    <!-- OB candle -->
+    <rect x="240" y="120" width="22" height="50" fill="#374151" rx="2"/>
+    <line x1="251" y1="110" x2="251" y2="178" stroke="#6b7280" stroke-width="1.5"/>
+    <!-- initial OB zone -->
+    <rect x="240" y="120" width="90" height="50" fill="#a3e635" opacity="0.04"/>
+    <line x1="240" y1="120" x2="330" y2="120" stroke="#a3e635" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+    <line x1="240" y1="170" x2="330" y2="170" stroke="#a3e635" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+    <!-- impulse up from OB -->
+    <rect x="268" y="75"  width="18" height="42" fill="#22c55e" opacity="0.7" rx="1"/>
+    <line x1="277" y1="65"  x2="277" y2="118" stroke="#22c55e" stroke-width="1.5"/>
+    <rect x="292" y="55"  width="18" height="38" fill="#22c55e" opacity="0.7" rx="1"/>
+    <line x1="301" y1="45"  x2="301" y2="92" stroke="#22c55e" stroke-width="1.5"/>
+    <!-- BREAK DOWN through OB — OB invalidated -->
+    <text x="370" y="40" fill="#ff4f6a" font-size="8" letter-spacing="1">② OB VIOLATED → BREAKER</text>
+    <rect x="320" y="85"  width="18" height="42" fill="#5c1d2a" rx="1"/>
+    <line x1="329" y1="75"  x2="329" y2="132" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="344" y="105" width="18" height="55" fill="#5c1d2a" rx="1"/>
+    <line x1="353" y1="95"  x2="353" y2="165" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="368" y="130" width="18" height="55" fill="#5c1d2a" rx="1"/>
+    <line x1="377" y1="120" x2="377" y2="192" stroke="#ff4f6a" stroke-width="1.5"/>
+    <!-- Breaker Block zone (flipped) -->
+    <rect x="240" y="120" width="200" height="50" fill="#ff4f6a" opacity="0.06"/>
+    <line x1="240" y1="120" x2="440" y2="120" stroke="#ff4f6a" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <line x1="240" y1="170" x2="440" y2="170" stroke="#ff4f6a" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <!-- retest of breaker from below -->
+    <rect x="400" y="143" width="18" height="38" fill="#1d5c50" rx="1"/>
+    <line x1="409" y1="133" x2="409" y2="188" stroke="#00e5c3" stroke-width="1.5"/>
+    <!-- short entry at breaker -->
+    <text x="409" y="127" fill="#ff4f6a" font-size="14" text-anchor="middle">↓</text>
+    <text x="409" y="122" fill="#ff4f6a" font-size="8" text-anchor="middle" letter-spacing="1">SHORT</text>
+    <rect x="424" y="162" width="18" height="50" fill="#5c1d2a" rx="1"/>
+    <line x1="433" y1="152" x2="433" y2="218" stroke="#ff4f6a" stroke-width="1.5"/>
+    <text x="265" y="185" fill="#ff4f6a" font-size="8" letter-spacing="1">BREAKER BLOCK</text>
+
+    <!-- divider -->
+    <line x1="460" y1="20" x2="460" y2="220" stroke="#1f2937" stroke-width="1"/>
+
+    <!-- ─── PANEL 3: Bearish OB ─── -->
+    <text x="490" y="40" fill="#6b7280" font-size="8" letter-spacing="1">① RALLY</text>
+    <!-- rally candles -->
+    <rect x="470" y="145" width="18" height="42" fill="#1d5c50" rx="1"/>
+    <line x1="479" y1="135" x2="479" y2="192" stroke="#00e5c3" stroke-width="1.5"/>
+    <rect x="494" y="120" width="18" height="40" fill="#1d5c50" rx="1"/>
+    <line x1="503" y1="110" x2="503" y2="165" stroke="#00e5c3" stroke-width="1.5"/>
+    <rect x="518" y="100" width="18" height="35" fill="#1d5c50" rx="1"/>
+    <line x1="527" y1="90"  x2="527" y2="140" stroke="#00e5c3" stroke-width="1.5"/>
+    <!-- Bearish OB candle (last bullish before impulse down) -->
+    <rect x="542" y="74"  width="22" height="38" fill="#ff4f6a" opacity="0.22" rx="2"/>
+    <rect x="542" y="74"  width="22" height="38" fill="none" stroke="#ff4f6a" stroke-width="1.5" rx="2"/>
+    <line x1="553" y1="64"  x2="553" y2="118" stroke="#ff4f6a" stroke-width="1.5"/>
+    <!-- OB zone -->
+    <rect x="542" y="74"  width="280" height="38" fill="#ff4f6a" opacity="0.05"/>
+    <line x1="542" y1="74"  x2="822" y2="74"  stroke="#ff4f6a" stroke-width="1.2" stroke-dasharray="5,3"/>
+    <line x1="542" y1="112" x2="822" y2="112" stroke="#ff4f6a" stroke-width="1.2" stroke-dasharray="5,3"/>
+    <!-- 50% OTE -->
+    <line x1="542" y1="93"  x2="822" y2="93"  stroke="#ff4f6a" stroke-width="0.8" opacity="0.5"/>
+    <text x="825" y="97" fill="#ff4f6a" font-size="8" opacity="0.7">50%</text>
+    <!-- impulse down candles -->
+    <rect x="570" y="112" width="18" height="55" fill="#5c1d2a" rx="1"/>
+    <line x1="579" y1="102" x2="579" y2="173" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="594" y="145" width="18" height="52" fill="#5c1d2a" rx="1"/>
+    <line x1="603" y1="135" x2="603" y2="203" stroke="#ff4f6a" stroke-width="1.5"/>
+    <!-- FVG after bearish OB -->
+    <rect x="570" y="73" width="22" height="30" fill="#ff4f6a" opacity="0.12" rx="2"/>
+    <text x="595" y="85" fill="#ff4f6a" font-size="7" letter-spacing="1"> FVG</text>
+    <!-- pullback back to OB -->
+    <rect x="618" y="118" width="18" height="35" fill="#374151" rx="1"/>
+    <line x1="627" y1="108" x2="627" y2="158" stroke="#6b7280" stroke-width="1.5"/>
+    <rect x="642" y="88"  width="18" height="32" fill="#1d5c50" rx="1"/>
+    <line x1="651" y1="78"  x2="651" y2="125" stroke="#00e5c3" stroke-width="1.5"/>
+    <!-- entry at OB 50% -->
+    <text x="651" y="68" fill="#f5c542" font-size="14" text-anchor="middle">↓</text>
+    <text x="651" y="62" fill="#f5c542" font-size="8" text-anchor="middle" letter-spacing="1">ENTRY</text>
+    <!-- continuation down -->
+    <rect x="666" y="108" width="18" height="45" fill="#5c1d2a" rx="1"/>
+    <line x1="675" y1="98"  x2="675" y2="158" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="690" y="138" width="18" height="48" fill="#5c1d2a" rx="1"/>
+    <line x1="699" y1="128" x2="699" y2="192" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="714" y="158" width="18" height="50" fill="#5c1d2a" rx="1"/>
+    <line x1="723" y1="148" x2="723" y2="214" stroke="#ff4f6a" stroke-width="1.5"/>
+    <text x="565" y="128" fill="#ff4f6a" font-size="8" letter-spacing="1">BEARISH OB</text>
+  </svg>`;
+}
+
+function drawOrderBlockStrategyDiagram() {
+  return `<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="font-family:monospace">
+    <defs>
+      <marker id="arr-lime" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#a3e635"/>
+      </marker>
+      <marker id="arr-gold-ob" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#f5c542"/>
+      </marker>
+      <marker id="arr-green-ob" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#22c55e"/>
+      </marker>
+    </defs>
+    <!-- grid -->
+    <line x1="60" y1="30"  x2="60"  y2="320" stroke="#1f2937" stroke-width="1"/>
+    <line x1="60" y1="320" x2="840" y2="320" stroke="#1f2937" stroke-width="1"/>
+    <line x1="60" y1="80"  x2="840" y2="80"  stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="60" y1="140" x2="840" y2="140" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="60" y1="200" x2="840" y2="200" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+    <line x1="60" y1="260" x2="840" y2="260" stroke="#1f2937" stroke-width="0.5" stroke-dasharray="3,5"/>
+
+    <!-- PHASE 1: downtrend context -->
+    <text x="130" y="50" fill="#6b7280" font-size="9" letter-spacing="2" text-anchor="middle">PHASE 1 — DOWNTREND CONTEXT</text>
+    <rect x="70"  y="85"  width="20" height="45" fill="#5c1d2a" rx="1"/>
+    <line x1="80"  y1="75"  x2="80"  y2="135" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="96"  y="108" width="20" height="45" fill="#5c1d2a" rx="1"/>
+    <line x1="106" y1="98"  x2="106" y2="158" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="122" y="130" width="20" height="42" fill="#5c1d2a" rx="1"/>
+    <line x1="132" y1="120" x2="132" y2="178" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="148" y="150" width="20" height="45" fill="#5c1d2a" rx="1"/>
+    <line x1="158" y1="140" x2="158" y2="200" stroke="#ff4f6a" stroke-width="1.5"/>
+    <rect x="174" y="168" width="20" height="42" fill="#5c1d2a" rx="1"/>
+    <line x1="184" y1="158" x2="184" y2="215" stroke="#ff4f6a" stroke-width="1.5"/>
+
+    <!-- PHASE 2: SSL Sweep then BULLISH OB forms -->
+    <text x="280" y="50" fill="#6b7280" font-size="9" letter-spacing="2" text-anchor="middle">PHASE 2 — SSL SWEEP + BULLISH OB FORMS</text>
+    <!-- SSL zone -->
+    <line x1="200" y1="225" x2="840" y2="225" stroke="#fb923c" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+    <text x="65" y="222" fill="#fb923c" font-size="8" letter-spacing="1">SSL</text>
+    <!-- sweep wick below SSL -->
+    <rect x="200" y="192" width="20" height="38" fill="#374151" rx="1"/>
+    <line x1="210" y1="182" x2="210" y2="240" stroke="#ff4f6a" stroke-width="2"/>
+    <ellipse cx="210" cy="240" rx="8" ry="5" fill="#fb923c" opacity="0.25"/>
+    <text x="210" y="252" fill="#fb923c" font-size="12" text-anchor="middle">↓</text>
+    <text x="210" y="262" fill="#fb923c" font-size="8" text-anchor="middle" letter-spacing="1">SSL SWEEP</text>
+
+    <!-- BULLISH OB candle (last bearish before impulse) -->
+    <rect x="226" y="194" width="24" height="36" fill="#a3e635" opacity="0.22" rx="2"/>
+    <rect x="226" y="194" width="24" height="36" fill="none" stroke="#a3e635" stroke-width="2" rx="2"/>
+    <line x1="238" y1="184" x2="238" y2="236" stroke="#a3e635" stroke-width="1.5"/>
+    <!-- OB ZONE extending right -->
+    <rect x="226" y="194" width="614" height="36" fill="#a3e635" opacity="0.04"/>
+    <line x1="226" y1="194" x2="840" y2="194" stroke="#a3e635" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <line x1="226" y1="230" x2="840" y2="230" stroke="#a3e635" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <!-- 50% OTE line -->
+    <line x1="226" y1="212" x2="840" y2="212" stroke="#a3e635" stroke-width="1" opacity="0.4"/>
+    <text x="845" y="216" fill="#a3e635" font-size="8">50%</text>
+    <!-- OB Label -->
+    <text x="65" y="207" fill="#a3e635" font-size="8" letter-spacing="1">BULLISH</text>
+    <text x="65" y="218" fill="#a3e635" font-size="8" letter-spacing="1">OB ZONE</text>
+
+    <!-- PHASE 3: Impulse up (proof of OB) with FVG -->
+    <text x="380" y="50" fill="#6b7280" font-size="9" letter-spacing="2" text-anchor="middle">PHASE 3 — IMPULSE + FVG</text>
+    <rect x="256" y="132" width="22" height="60" fill="#22c55e" opacity="0.9" rx="1"/>
+    <line x1="267" y1="120" x2="267" y2="196" stroke="#22c55e" stroke-width="2"/>
+    <rect x="284" y="100" width="22" height="48" fill="#22c55e" opacity="0.8" rx="1"/>
+    <line x1="295" y1="88"  x2="295" y2="152" stroke="#22c55e" stroke-width="2"/>
+    <!-- FVG zone between OB candle top (194) and impulse candle 1 low (192) -->
+    <rect x="256" y="152" width="26" height="42" fill="#a3e635" opacity="0.18" rx="2"/>
+    <text x="285" y="177" fill="#a3e635" font-size="8" letter-spacing="1">FVG</text>
+    <!-- continues up -->
+    <rect x="312" y="82"  width="22" height="40" fill="#22c55e" opacity="0.7" rx="1"/>
+    <line x1="323" y1="72"  x2="323" y2="125" stroke="#22c55e" stroke-width="1.5"/>
+    <rect x="340" y="68"  width="22" height="38" fill="#1d5c50" rx="1"/>
+    <line x1="351" y1="58"  x2="351" y2="110" stroke="#22c55e" stroke-width="1.5"/>
+
+    <!-- PHASE 4: Retracement to OB — ENTRY -->
+    <text x="540" y="50" fill="#6b7280" font-size="9" letter-spacing="2" text-anchor="middle">PHASE 4 — RETRACEMENT TO OB → ENTRY</text>
+    <!-- pullback candles -->
+    <rect x="368" y="88"  width="22" height="50" fill="#374151" rx="1"/>
+    <line x1="379" y1="78"  x2="379" y2="142" stroke="#6b7280" stroke-width="1.5"/>
+    <rect x="396" y="118" width="22" height="55" fill="#374151" rx="1"/>
+    <line x1="407" y1="108" x2="407" y2="178" stroke="#6b7280" stroke-width="1.5"/>
+    <rect x="424" y="152" width="22" height="48" fill="#374151" rx="1"/>
+    <line x1="435" y1="142" x2="435" y2="206" stroke="#6b7280" stroke-width="1.5"/>
+    <!-- candle enters OB zone -->
+    <rect x="452" y="188" width="22" height="38" fill="#374151" rx="1"/>
+    <line x1="463" y1="178" x2="463" y2="232" stroke="#6b7280" stroke-width="1.5"/>
+
+    <!-- ENTRY candle: bullish reversal inside OB at 50% OTE -->
+    <rect x="480" y="195" width="24" height="32" fill="#22c55e" opacity="0.9" rx="1"/>
+    <line x1="492" y1="183" x2="492" y2="235" stroke="#22c55e" stroke-width="2"/>
+    <!-- SL below OB -->
+    <line x1="480" y1="240" x2="840" y2="240" stroke="#ff4f6a" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="845" y="244" fill="#ff4f6a" font-size="9">SL</text>
+    <!-- entry arrow + label -->
+    <line x1="492" y1="192" x2="492" y2="155" stroke="#f5c542" stroke-width="1.5" marker-end="url(#arr-gold-ob)"/>
+    <rect x="450" y="138" width="84" height="16" rx="3" fill="#1a1200" stroke="#f5c542" stroke-width="0.8"/>
+    <text x="492" y="150" fill="#f5c542" font-size="9" text-anchor="middle" letter-spacing="1">LONG @ 50% OTE</text>
+
+    <!-- PHASE 5: Expansion to targets -->
+    <text x="720" y="50" fill="#6b7280" font-size="9" letter-spacing="2" text-anchor="middle">PHASE 5 — EXPANSION</text>
+    <rect x="510" y="162" width="22" height="38" fill="#22c55e" opacity="0.8" rx="1"/>
+    <line x1="521" y1="150" x2="521" y2="205" stroke="#22c55e" stroke-width="1.5"/>
+    <rect x="538" y="130" width="22" height="40" fill="#22c55e" opacity="0.8" rx="1"/>
+    <line x1="549" y1="118" x2="549" y2="175" stroke="#22c55e" stroke-width="1.5"/>
+    <rect x="566" y="105" width="22" height="38" fill="#22c55e" opacity="0.75" rx="1"/>
+    <line x1="577" y1="95"  x2="577" y2="148" stroke="#22c55e" stroke-width="1.5"/>
+    <!-- TP1 line -->
+    <line x1="538" y1="118" x2="840" y2="118" stroke="#f5c542" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+    <text x="845" y="122" fill="#f5c542" font-size="9">TP1</text>
+    <rect x="594" y="82"  width="22" height="35" fill="#22c55e" opacity="0.7" rx="1"/>
+    <line x1="605" y1="72"  x2="605" y2="120" stroke="#22c55e" stroke-width="1.5"/>
+    <rect x="622" y="60"  width="22" height="34" fill="#22c55e" opacity="0.7" rx="1"/>
+    <line x1="633" y1="50"  x2="633" y2="98"  stroke="#22c55e" stroke-width="1.5"/>
+    <!-- TP2 line -->
+    <line x1="622" y1="50"  x2="840" y2="50"  stroke="#f5c542" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+    <text x="845" y="54" fill="#f5c542" font-size="9">TP2</text>
+
+    <!-- R:R badge -->
+    <rect x="680" y="130" width="145" height="48" rx="5" fill="#0d1117" stroke="#374151" stroke-width="1"/>
+    <text x="752" y="148" fill="#9ca3af" font-size="9" text-anchor="middle">RISK : REWARD</text>
+    <text x="752" y="168" fill="#a3e635" font-size="16" text-anchor="middle" font-weight="bold">3:1 – 8:1</text>
+
+    <!-- phase bottom labels -->
+    <text x="125"  y="340" fill="#6b7280" font-size="8" letter-spacing="1" text-anchor="middle">① DOWNTREND</text>
+    <text x="230"  y="340" fill="#fb923c" font-size="8" letter-spacing="1" text-anchor="middle">② SSL SWEEP</text>
+    <text x="310"  y="340" fill="#a3e635" font-size="8" letter-spacing="1" text-anchor="middle">③ OB + IMPULSE</text>
+    <text x="460"  y="340" fill="#f5c542" font-size="8" letter-spacing="1" text-anchor="middle">④ RETRACEMENT → ENTRY</text>
+    <text x="640"  y="340" fill="#22c55e" font-size="8" letter-spacing="1" text-anchor="middle">⑤ EXPANSION TO TARGETS</text>
   </svg>`;
 }
 
